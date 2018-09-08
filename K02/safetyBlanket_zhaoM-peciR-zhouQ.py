@@ -12,14 +12,23 @@ KREWES = {
 'm': ['Daniel', 'Aleksandra', 'Addison', 'Hui Min', 'Aaron', 'Rubin', 'Raunak', 'Stefan', 'Cheryl', 'Cathy', 'Mai', 'Claire ', 'Alex', 'Bill', 'Daniel', 'Jason'], 
 'x': ['Derek', 'Britni', 'Joan', 'Vincent', 'Jared', 'Ivan', 'Thomas', 'Maggie', 'Damian', 'Tina', 'Fabiha', 'John', 'Susan ', 'Kaitlin', 'Michelle', 'Clara', 'Rachel', 'Amit', 'Jerry', 'Raymond', 'Zane', 'Soojin', 'Maryann', 'Adil', 'Josh', 'Imad']}
 
-#function that picks a random entry in the dictionary
-def pick_random(dict):
-    #gets a random key using the built in random library
-    key = random.choice(list(dict.keys()))
-    #gets the list associated with the random key
-    students = dict[key]
+#function that picks a random entry in the dictionary, given the desired team
+def pick_random(key):
+    #gets the list associated with the key
+    students = KREWES[key]
     #returns a random value from the list
     return students[random.randint(0, len(students) - 1)]
 
-#calls the method on our dictionary and prints it
-print(pick_random(KREWES))
+#main method
+def main():
+    #gets the user choice on what team they want to pick from
+    choice = input("Please pick a team from the choices (w, m, x): ")
+    
+    #tests if what they typed in is a valid option; if not, then it keeps repeating until something valid is inputted
+    while(choice != 'w' and choice != 'm' and choice != 'x'):
+        print('Invalid option! Try again!')
+        choice = input("Please pick a team from the choices (w, m, x): ")
+    #prints the random member from the given team
+    print("Random member from team " + choice + ": " + pick_random(choice))
+
+main() #call to the main method
