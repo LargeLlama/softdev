@@ -17,7 +17,7 @@ def pick_random(key):
     #gets the list associated with the key
     students = KREWES[key]
     #returns a random value from the list
-    return students[random.randint(0, len(students) - 1)]
+    return random.choice(students)
 
 #main method
 def main():
@@ -25,7 +25,7 @@ def main():
     choice = input("Please pick a team from the choices (w, m, x): ")
     
     #tests if what they typed in is a valid option; if not, then it keeps repeating until something valid is inputted
-    while(choice != 'w' and choice != 'm' and choice != 'x'):
+    while choice not in KREWES.keys():
         print('Invalid option! Try again!')
         choice = input("Please pick a team from the choices (w, m, x): ")
     #prints the random member from the given team
