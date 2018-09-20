@@ -19,3 +19,4 @@ def second_page():
 def third_page():
     return "THIRTEEN HOURS TILL I LAND"
 
+app.run()
