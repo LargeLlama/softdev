@@ -51,12 +51,8 @@ def hello_world():
     print(__name__)
     return 'yeet'
 
+#Get the dictionary
 dict = parse_data('data/occupations.csv')
-jobs = list(dict.keys())
-values = []              
-for key in jobs:
-    values.append(dict[key])
-
 
 @app.route('/occupations')
 def occupations():
