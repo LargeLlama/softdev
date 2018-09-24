@@ -1,0 +1,45 @@
+p
+{
+    font-family: "Courier New", Courier;
+    font-size: 20px;
+    color: #efebce;    
+}
+
+body
+{
+    background-color: #1b4353;
+}
+
+h1, h3
+{
+    font-family: "Courier New", Courier;
+    color: #efebce;
+}
+
+table
+{
+    border: 1px solid #17bebb;
+    border-collapse: collapse;
+}
+
+table, th, td
+{
+    color: #efebce;
+    font-family: "Courier New", Courier;
+}
+
+th, td
+{
+    text-align: center;
+}
+
+tr:hover 
+{
+    background-color: #c492b1;
+}
+
+th
+{
+    background-color: #17bebb; 
+    color: 
+}

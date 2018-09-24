@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <head>
+        <title> Occupations </title>
+        <link rel="stylesheet" type="text/css" href="static/stylesheet.css">
+    </head>
+
+    <body>
+        <center> <h1> Occupations </h1> </center>
+
+        <center> <h3> Here is a tablse of occupations and the perecent of the workforce in each group (courtesy of Mr. Brooks) </h3> </center>
+
+        <center> <h3> Randomly selected occupation (based on the percentages given): <br><strong> {{ random_occupation }} </strong> </h3> </center>
+        <center>
+        <table style="width: 50%">
+            <tr>
+                <th> <strong> Occupation </strong> </th>
+                <th> <strong> Percentage </strong></th>
+            </tr>
+            
+            {% for key, value in _dict.items() %}
+                <tr>
+                    <td> {{ key }} </td>
+                    <td> {{ value }}% </td>
+                </tr>
+            {% endfor %}
+        </table>
+        </center>
+
+        <p> Courtesy of Rubin Peci and Jiajie Mai </p>
+    </body>
+</html>
