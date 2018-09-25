@@ -49,7 +49,7 @@ def pick_job(dict):
 def hello_world():
     print("about to print __name__")
     print(__name__)
-    return 'yeet'
+    return '<h1> Click <a href=/occupations>here</a> to go to the occupations page! </h1>'
 
 #Get the dictionary
 dict = parse_data('data/occupations.csv')
