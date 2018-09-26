@@ -11,10 +11,10 @@ def hello_world():
 
 #Get the dictionary, create a variable for it so we don't have to call the function more than once
 dict = occupations.parse_data('data/occupations.csv')
-job = occupations.pick_job(dict)
 
 @app.route('/occupations')
-def occupations():
+def main():
+    job = occupations.pick_job(dict)
     return render_template('occupations.html', 
                            random_occupation = job,
                            _dict = dict)
