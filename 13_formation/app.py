@@ -6,12 +6,12 @@ app = Flask(__name__)
 def test():
 	return render_template("test.html")
 
-@app.route("/auth")
+@app.route("/auth", methods=['GET', 'POST'])
 def authorize():
 	print(app)
 	print(request)
 	print(request.args)
-	print(request.headers)
+	print(request.headerst)
 	return render_template("form.html", firstname=request.args['firstname'], lastname=request.args['lastname'], request_type=request.method)
 
 app.debug = True
