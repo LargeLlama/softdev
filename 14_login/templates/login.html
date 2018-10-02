@@ -1,0 +1,22 @@
+<DOCTYPE! html>
+	<head>
+		<title> Login </title>
+	</head>
+
+	<body>
+
+		<center> <h1> Login </h1> </center>
+
+		<h3> Type in your login info below </h3>
+
+		<form action="/auth" method=POST>
+			<h5> Username: <input type="text" name="username"> </h5>
+			<h5> Password: <input type="password" name="password"> </h5>
+			<br> <input type="submit" value="Login">
+		</form> 
+
+		<h2> {{ error }} </h2>
+
+	</body>
+
+</html>
