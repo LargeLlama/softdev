@@ -30,6 +30,23 @@ with open('data/peeps.csv', 'r') as csvfile:
 command = "CREATE TABLE peeps (name TEXT, age INTEGER, id INTEGERY PRIMARY KEY)"          #build SQL stmt, save as string
 c.execute(command)    #run SQL statement
 c.executemany('INSERT INTO peeps VALUES (?, ?, ?)', data)
+
+data = []
+individual_rows = []
+
+with open('data/courses.csv', 'r') as csvfile:
+	reader = csv.DictReader(csvfile)
+	for row in reader:
+		individual_rows.append(row['code'])
+		individual_rows.append(row['mark'])
+		individual_rows.append(row['id'])
+		data.append(individual_rows)
+		individual_rows = []
+
+command = "CREATE TABLE courses (name TEXT, mark INTEGER, id INTEGERY)"          #build SQL stmt, save as string
+c.execute(command)    #run SQL statement
+c.executemany('INSERT INTO courses VALUES (?, ?, ?)', data)
+
 #==========================================================
 
 db.commit() #save changes
