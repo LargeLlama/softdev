@@ -41,6 +41,9 @@ c.executemany('INSERT INTO courses VALUES (?, ?, ?)', courses)
 db.commit() #save changes
 db.close()  #close database
 
+db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+c = db.cursor()               #facilitate db ops
+
 # CREATE A DICTIONARY BASED OFF databse.db FILE
 #FORMAT: id : [name, grade0, grade1, grade2, ...]
 def create_dict():
@@ -58,6 +61,15 @@ def create_dict():
 
     return DICT 
 
+
+test = create_dict()
+for key in test.keys():
+    print(str(key) + ": " + str( test[key]))
+
+db.commit() #save changes
+db.close()  #close database
+
+'''
 # CREATE A DATABSE FROM THE DICTIONARY
 DB_FILE = "peeps_avg.db"
 
@@ -67,9 +79,5 @@ c = db.cursor()               #facilitate db ops
 #======= creating the file and getting the averages
 command = "CREATE TABLE peeps_avg (name TEXT, id INTEGER, avg INTEGER)"
 c.execute(command)
-
-create_dict()
-
-
 #======================================
-
+'''
