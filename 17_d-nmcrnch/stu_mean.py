@@ -61,15 +61,33 @@ def create_dict():
 
     return DICT 
 
-
+# diagnostic print statements for the create_dict() method
+'''
 test = create_dict()
+for key in test.keys():
+    print(str(key) + ": " + str( test[key]))
+'''
+
+def calc_avg():
+    DICT = create_dict()
+    for key in DICT.keys():
+        TOTAL  = 0
+        SUM = 0
+        for element in DICT[key]:
+            if type(element) is int:
+                TOTAL += 1
+                SUM += element
+        DICT[key].append(SUM / TOTAL)
+    return DICT
+
+test = calc_avg() 
 for key in test.keys():
     print(str(key) + ": " + str( test[key]))
 
 db.commit() #save changes
 db.close()  #close database
 
-'''
+
 # CREATE A DATABSE FROM THE DICTIONARY
 DB_FILE = "peeps_avg.db"
 
@@ -79,5 +97,6 @@ c = db.cursor()               #facilitate db ops
 #======= creating the file and getting the averages
 command = "CREATE TABLE peeps_avg (name TEXT, id INTEGER, avg INTEGER)"
 c.execute(command)
+
 #======================================
-'''
+
