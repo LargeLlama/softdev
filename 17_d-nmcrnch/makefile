@@ -3,7 +3,7 @@ run:
 	@python stu_mean.py
 
 clean:
-	@if [ -f *.db ]; \
-	then \
-		rm *.db ; \
+	@if [ -f *.db ];\
+	then\
+		rm *.db;\
 	fi;

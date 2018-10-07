@@ -80,10 +80,12 @@ def calc_avg():
         DICT[key].append(SUM / TOTAL)
     return DICT
 
+#DIAGNOSTIC PRINT STATEMENT FOR THE calc_avg() METHOD
+'''
 test = calc_avg() 
 for key in test.keys():
     print(str(key) + ": " + str( test[key]))
-
+'''
 db.commit() #save changes
 db.close()  #close database
 
