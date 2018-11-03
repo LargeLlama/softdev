@@ -16,18 +16,16 @@ c = db.cursor()               #facilitate db ops
 
 # empty lists to store our data from the csv
 data = []
-individual_rows = []
+#individual_rows = []
 
 #loops thru each row and adds it to the individual rows list
 #then, adds that to the big data list and empties the individual rows list
 with open('data/peeps.csv', 'r') as csvfile:
 	reader = csv.DictReader(csvfile)
 	for row in reader:
-		individual_rows.append(row['name'])
-		individual_rows.append(row['age'])
-		individual_rows.append(row['id'])
+		individual_rows = list((row['name'], row['age'], row['id']))
 		data.append(individual_rows)
-		individual_rows = []
+#		individual_rows = []
 
 #creates the table
 command = "CREATE TABLE peeps (name TEXT, age INTEGER, id INTEGERY PRIMARY KEY)"
