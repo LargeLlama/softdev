@@ -1,0 +1,39 @@
+body
+{
+	background-color:gray;
+	font-family: sans-serif
+}
+
+h1
+{
+	padding: 5px;
+	color: white;
+	text-align: center;
+	background-color: #D3D3D3;
+}
+
+ul 
+{
+	padding: 0;
+	text-align: left;
+	list-style-type: none;
+	font-weight: bold;
+}
+
+div#content
+{
+	padding: 10px; 
+	text-align: left; 
+	position: relative; 
+	top: -150px; 
+	left: 150px
+}
+
+div#copyright
+{
+	padding: 10px; 
+	text-align: right; 
+	background-color:#505050; 
+	color:gray;
+}
+
