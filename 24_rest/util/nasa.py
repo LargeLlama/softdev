@@ -1,0 +1,3 @@
+import urllib, json
+
+url = "https://api.nasa.gov/planetary/apod?api_key=NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo"
