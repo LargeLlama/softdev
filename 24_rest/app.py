@@ -6,4 +6,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("home.html", img = "https://www.dailydot.com/wp-content/uploads/2018/04/ledragondoge-760x400.png")
+    dict = nasa.get_dict()
+    if dict["media_type"] == "video":
+        return render_template("video.html", url = dict['url'], desc = dict['explanation'])
+    else:
+        return render_template("image.html", img = dict['url'], desc = dict['explanation'])
