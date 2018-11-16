@@ -7,4 +7,4 @@ def get_joke():
     data = json.loads(response.read())
     return data['value']['joke']
 
-print(get_joke())
+#print(get_joke())
