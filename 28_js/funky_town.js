@@ -16,11 +16,13 @@ var gcd = function(a, b)
 
 var generateList = function(length)
 {
-	var list = []
+	var list = [];
+
 	for (i = 0; i < length; i++)
 	{
 		list.push("Student " + i);
 	}
+
 	return list;
 }
 
