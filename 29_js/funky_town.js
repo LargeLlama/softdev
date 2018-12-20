@@ -62,3 +62,14 @@ var genStudent = function()
 	var student = document.getElementById("student");
 	student.innerHTML = " The random student is " + randomStudent();
 }
+
+var genGCD = function()
+{
+	var a = document.getElementById("a").value;
+	var b = document.getElementById("b").value;
+	console.log(a);
+	console.log(b);
+	console.log(gcd(a, b));
+	var ans = document.getElementById("gcd_ans");
+	ans.innerHTML = "GCD of " + a + " and " + b + " is <strong>" + gcd(a, b) + "</strong>";
+}
