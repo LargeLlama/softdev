@@ -53,6 +53,8 @@ var genFib = function()
 {
 	var fib = document.getElementById("fib");
 	var num = document.getElementById("input");
+	console.log(fibonacci((document.getElementById("num").value)));
+
 	num.innerHTML = "Running fibonacci(" + document.getElementById("num").value + ")";
 	fib.innerHTML = fibonacci((document.getElementById("num").value));
 }
@@ -60,6 +62,7 @@ var genFib = function()
 var genStudent = function()
 {
 	var student = document.getElementById("student");
+	console.log(randomStudent());
 	student.innerHTML = " The random student is " + randomStudent();
 }
 
@@ -67,9 +70,9 @@ var genGCD = function()
 {
 	var a = document.getElementById("a").value;
 	var b = document.getElementById("b").value;
-	console.log(a);
-	console.log(b);
-	console.log(gcd(a, b));
+	console.log("a is " + a);
+	console.log("b is " + b);
+	console.log("gcd of a and b is " + gcd(a, b));
 	var ans = document.getElementById("gcd_ans");
 	ans.innerHTML = "GCD of " + a + " and " + b + " is <strong>" + gcd(a, b) + "</strong>";
 }
